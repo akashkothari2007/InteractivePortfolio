@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import ProjectImage from "./ProjectImage";
 
 function playBlip(type: "open" | "close" | "select" = "open") {
   try {
@@ -207,7 +208,10 @@ export default function ProjectsPanel({
             </div>
             <div className="project-detail-image">
               {selectedProject.image ? (
-                <img src={selectedProject.image} alt={selectedProject.name} />
+                <ProjectImage
+                  src={selectedProject.image}
+                  alt={selectedProject.name}
+                />
               ) : (
                 <div className="project-detail-image-placeholder">
                   <span>Add image to project</span>

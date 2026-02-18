@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, type CSSProperties } from "react";
 import { PROJECTS, type Project } from "./ProjectsPanel";
 import { EXPERIENCES, type Experience } from "./ExperiencePanel";
+import ProjectImage from "./ProjectImage";
 
 export default function Fallback2D() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(
@@ -210,7 +211,7 @@ export default function Fallback2D() {
 
                 <div className="fallback-project-image">
                   {selectedProject.image ? (
-                    <img
+                    <ProjectImage
                       src={selectedProject.image}
                       alt={selectedProject.name}
                     />
