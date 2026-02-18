@@ -1,0 +1,285 @@
+/* Cozy lowpoly theme - easy on the eyes, recruiter-friendly */
+.unity-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  background: #2c3a2e;
+}
+
+.app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  font-family: "JetBrains Mono", "Fira Code", "IBM Plex Mono", "Consolas", monospace;
+  color: #a0e0a0;
+  background: linear-gradient(to bottom, rgba(44, 58, 46, 0.85) 0%, rgba(44, 58, 46, 0) 100%);
+  backdrop-filter: blur(4px);
+}
+
+.header-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.header-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.header-btn {
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: #a0e0a0;
+  border: 1px solid rgba(160, 224, 160, 0.3);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.header-btn:hover {
+  background: rgba(160, 224, 160, 0.1);
+  border-color: rgba(160, 224, 160, 0.6);
+}
+
+/* Projects panel - terminal style */
+.projects-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  animation: projects-overlay-in 0.25s ease-out;
+}
+
+/* Projects panel animation - tinker with these: */
+/* transform-origin: where the zoom expands from (relative to the panel) */
+/*   x: calc(50% - 16.67vw) = 1/3 screen from left; use "left"/"center"/"right" or % */
+/*   y: 50% = middle; use "top"/"center"/"bottom" or 50vh */
+/* animation scale: 0 = start from invisible, 0.01 = tiny dot, 0.3 = small, 0.5 = half */
+/* duration: 0.5s = medium, 0.4s = snappy, 0.7s = slower/dramatic */
+.projects-panel {
+  position: relative;
+  width: min(660px, 92vw);
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 1.5rem 1.75rem;
+  background: #2c3a2e;
+  border: 1px solid rgba(160, 224, 160, 0.25);
+  border-radius: 6px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  font-family: "JetBrains Mono", "Fira Code", "IBM Plex Mono", "Consolas", monospace;
+  color: #a0e0a0;
+  transform-origin: calc(50% - 16.67vw) 50%;
+  animation: projects-panel-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes projects-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes projects-panel-in {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.projects-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: #a0e0a0;
+  background: transparent;
+  border: 1px solid rgba(160, 224, 160, 0.2);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.projects-close:hover {
+  background: rgba(160, 224, 160, 0.1);
+  border-color: rgba(160, 224, 160, 0.5);
+}
+
+.projects-header {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.projects-separator {
+  height: 1px;
+  background: rgba(160, 224, 160, 0.3);
+  margin-bottom: 1rem;
+}
+
+.projects-prompt {
+  font-size: 0.9rem;
+  color: rgba(160, 224, 160, 0.8);
+  margin-bottom: 1.25rem;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(160, 224, 160, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.project-card:hover {
+  background: rgba(160, 224, 160, 0.06);
+  border-color: rgba(160, 224, 160, 0.3);
+}
+
+.project-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(160, 224, 160, 0.8);
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.project-name {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  color: rgba(160, 224, 160, 0.6);
+}
+
+/* Project detail view */
+.project-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-detail-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.project-detail-desc {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(160, 224, 160, 0.85);
+}
+
+.project-detail-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(160, 224, 160, 0.15);
+}
+
+.project-detail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-detail-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(160, 224, 160, 0.4);
+  font-size: 0.85rem;
+}
+
+.project-detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: rgba(160, 224, 160, 0.1);
+  border: 1px solid rgba(160, 224, 160, 0.35);
+  border-radius: 4px;
+  color: #a0e0a0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.project-link:hover {
+  background: rgba(160, 224, 160, 0.18);
+  border-color: rgba(160, 224, 160, 0.6);
+}
+
+.project-links-placeholder {
+  font-size: 0.8rem;
+  color: rgba(160, 224, 160, 0.5);
+}
