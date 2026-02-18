@@ -1,0 +1,27 @@
+{
+    "headers": [
+      {
+        "source": "/unity/Build/(.*)\\.br",
+        "headers": [
+          { "key": "Content-Encoding", "value": "br" },
+          { "key": "Cache-Control", "value": "no-transform" }
+        ]
+      },
+      {
+        "source": "/unity/Build/(.*)\\.wasm\\.br",
+        "headers": [
+          { "key": "Content-Type", "value": "application/wasm" },
+          { "key": "Content-Encoding", "value": "br" },
+          { "key": "Cache-Control", "value": "no-transform" }
+        ]
+      },
+      {
+        "source": "/unity/Build/(.*)\\.js\\.br",
+        "headers": [
+          { "key": "Content-Type", "value": "application/javascript" },
+          { "key": "Content-Encoding", "value": "br" },
+          { "key": "Cache-Control", "value": "no-transform" }
+        ]
+      }
+    ]
+  }
