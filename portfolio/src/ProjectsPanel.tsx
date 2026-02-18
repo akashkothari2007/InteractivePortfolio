@@ -21,7 +21,7 @@ function playBlip(type: "open" | "close" | "select" = "open") {
   }
 }
 
-interface Project {
+export interface Project {
   id: string;
   name: string;
   description: string;
@@ -37,22 +37,58 @@ interface ProjectsPanelProps {
   originY?: number;
 }
 
-const PROJECTS: Project[] = [
+export const PROJECTS: Project[] = [
   {
-    id: "alpha",
-    name: "Project Alpha",
-    description: "Coming soon",
-    image: undefined,
-    demoUrl: undefined,
-    githubUrl: undefined,
+    id: "mathora",
+    name: "Mathora — AI‑Driven Interactive Math Visualizer",
+    description:
+      "Built an AI‑powered math visualization engine that plots functions, animates transformations, and walks through problem‑solving steps in real time using React Three Fiber, Three.js, and LLM‑driven timelines.",
+    image: "/mathora.png",
+    demoUrl: "https://youtube.com",
+    githubUrl: "https://github.com/akashkothari2007/Mathora",
   },
   {
-    id: "beta",
-    name: "Project Beta",
-    description: "Coming soon",
-    image: undefined,
-    demoUrl: undefined,
-    githubUrl: undefined,
+    id: "nba-predictor",
+    name: "Yuno Ball - NBA Picks and Odds Predictor to make Educated Bets",
+    description:
+      "Scraped 9000 games of NBA data and trained multiple models such as XGBoost and Random Forest to predict game outcomes and scores, and compare with polymarket odds, all combined in a React environment with graded bets, parlay builder and a chatbot to understand reasons behind bets",
+    image: "/nba.png",
+    demoUrl: "https://youtu.be/U0FEb5V6Gc4",
+    githubUrl: "https://github.com/akashkothari2007/NBA-Picks-and-Odds-Predictor",
+  },
+  {
+    id: "lockin-ai",
+    name: "LockIn AI — Distraction & Habit Detection App",
+    description:
+      "Prototype productivity app that uses YOLO + OpenCV to detect on‑screen distractions and provide real‑time feedback, with a Python backend and Next.js UI for session tracking and analytics.",
+    image: "/lockin.png",
+    demoUrl: "https://youtu.be/M90tyuMJuCk",
+    githubUrl: "https://github.com/Daynel-Kem/LockInAI",
+  },
+  {
+    id: "myroom",
+    name: "Interactive 3D Personal Portfolio",
+    description:
+      "Used Unity to create an interactive 3D personal portfolio exported as webGL and embedded in React.js with panel overlays and animations and 2D fallbacks in case of load fails",
+    image: "/room.png",
+    githubUrl: "https://github.com/akashkothari2007/InteractivePortfolio",
+  },
+  {
+    id: "finger-pointer",
+    name: "Finger Pointer — Gyroscope‑Based Mouse",
+    description:
+      "Wearable finger‑mounted pointing device built with an ESP32, MPU6050 IMU, and custom firmware to control the mouse cursor and clicks via gestures, designed for alternative input accessibility.",
+    image: "/fingerpointer.png",
+    githubUrl: "https://github.com/akashkothari2007/FingerPointer",
+  },
+  {
+    id: "gyro-robot",
+    name: "Gyroscope Balancing Robot",
+    description:
+      "Self‑balancing robot using Arduino and robotics control to keep upright based on gyroscope feedback, with logged experiments and tuning for stability.",
+    image: "/finalrobot.png",
+    demoUrl: "https://www.youtube.com/shorts/jFM6bGMcFYE",
+    githubUrl: "https://github.com/akashkothari2007/GyroscopeRobot",
   },
 ];
 
@@ -132,15 +168,7 @@ export default function ProjectsPanel({
             <h2 className="project-detail-title">{selectedProject.name}</h2>
             <p className="project-detail-desc">{selectedProject.description}</p>
 
-            <div className="project-detail-image">
-              {selectedProject.image ? (
-                <img src={selectedProject.image} alt={selectedProject.name} />
-              ) : (
-                <div className="project-detail-image-placeholder">
-                  <span>Add image to project</span>
-                </div>
-              )}
-            </div>
+            
 
             <div className="project-detail-links">
               {selectedProject.demoUrl && (
@@ -163,10 +191,15 @@ export default function ProjectsPanel({
                   GitHub →
                 </a>
               )}
-              {!selectedProject.demoUrl && !selectedProject.githubUrl && (
-                <span className="project-links-placeholder">
-                  Add demo & github URLs in ProjectsPanel.tsx
-                </span>
+      
+            </div>
+            <div className="project-detail-image">
+              {selectedProject.image ? (
+                <img src={selectedProject.image} alt={selectedProject.name} />
+              ) : (
+                <div className="project-detail-image-placeholder">
+                  <span>Add image to project</span>
+                </div>
               )}
             </div>
           </div>
