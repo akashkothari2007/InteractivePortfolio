@@ -159,7 +159,7 @@ export default function ExperiencePanel({
         <div className="experience-layout">
           <div className="experience-timeline">
             <div className="experience-rail" />
-            {EXPERIENCES.map((exp, index) => (
+            {EXPERIENCES.map((exp) => (
               <button
                 key={exp.id}
                 className={
