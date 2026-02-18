@@ -248,6 +248,13 @@
   color: rgba(160, 224, 160, 0.6);
 }
 
+.project-tech {
+  font-size: 0.8rem;
+  color: rgba(160, 224, 160, 0.5);
+  margin-top: 0.25rem;
+  display: block;
+}
+
 /* Project detail view */
 .project-detail {
   display: flex;
@@ -266,6 +273,27 @@
   margin: 0;
   font-size: 0.9rem;
   color: rgba(160, 224, 160, 0.85);
+}
+
+.project-detail-tech {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(160, 224, 160, 0.15);
+  border-bottom: 1px solid rgba(160, 224, 160, 0.15);
+}
+
+.project-detail-tech-label {
+  font-size: 0.8rem;
+  color: rgba(160, 224, 160, 0.6);
+  font-weight: 500;
+}
+
+.project-detail-tech-stack {
+  font-size: 0.85rem;
+  color: rgba(160, 224, 160, 0.75);
+  line-height: 1.4;
 }
 
 .project-detail-image {
@@ -907,6 +935,31 @@
   justify-content: center;
   font-size: 0.85rem;
   color: rgba(160, 224, 160, 0.5);
+}
+
+.fallback-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.fallback-skills-category {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.fallback-skills-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(160, 224, 160, 0.9);
+}
+
+.fallback-skills-list {
+  font-size: 0.85rem;
+  color: rgba(160, 224, 160, 0.75);
+  line-height: 1.5;
 }
 
 @media (max-width: 900px) {

@@ -246,6 +246,32 @@ export default function Fallback2D() {
               </div>
             )}
           </div>
+
+          <div className="fallback-block fade-item" style={{ "--fade-delay": "600ms" } as CSSProperties}>
+            <h2 className="fallback-heading">TECHNICAL SKILLS</h2>
+            <div className="fallback-skills">
+              <div className="fallback-skills-category">
+                <span className="fallback-skills-label">Languages:</span>
+                <span className="fallback-skills-list">Python, C/C++, Java, C#, JavaScript (ES6+), SQL, TypeScript</span>
+              </div>
+              <div className="fallback-skills-category">
+                <span className="fallback-skills-label">Frameworks & Platforms:</span>
+                <span className="fallback-skills-list">Flask, React, Next.js, Electron, Node.js, Azure, Microsoft Graph API, Unity, WebGL</span>
+              </div>
+              <div className="fallback-skills-category">
+                <span className="fallback-skills-label">Machine Learning:</span>
+                <span className="fallback-skills-list">Scikit-learn, PyTorch, XGBoost, Pandas, Data Preprocessing, Model Tuning, Computer Vision, YOLO, OpenCV</span>
+              </div>
+              <div className="fallback-skills-category">
+                <span className="fallback-skills-label">Developer Tools:</span>
+                <span className="fallback-skills-list">Git, VS Code, Postman, Kubernetes, Jira, Confluence</span>
+              </div>
+              <div className="fallback-skills-category">
+                <span className="fallback-skills-label">Hardware & Electronics:</span>
+                <span className="fallback-skills-list">Arduino, Raspberry Pi, ESP32, IMUs, PID Control Systems</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

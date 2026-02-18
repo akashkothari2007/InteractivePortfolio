@@ -28,6 +28,7 @@ export interface Project {
   image?: string;
   demoUrl?: string;
   githubUrl?: string;
+  techStack?: string;
 }
 
 interface ProjectsPanelProps {
@@ -46,6 +47,7 @@ export const PROJECTS: Project[] = [
     image: "/mathora.png",
     demoUrl: "https://youtube.com",
     githubUrl: "https://github.com/akashkothari2007/Mathora",
+    techStack: "React · React Three Fiber · Three.js · TypeScript · LLM APIs · Custom Animation Timeline System · Node.js",
   },
   {
     id: "nba-predictor",
@@ -55,6 +57,7 @@ export const PROJECTS: Project[] = [
     image: "/nba.png",
     demoUrl: "https://youtu.be/U0FEb5V6Gc4",
     githubUrl: "https://github.com/akashkothari2007/NBA-Picks-and-Odds-Predictor",
+    techStack: "Python · XGBoost · Random Forest · Pandas · Feature Engineering · Flask API · React · Data Scraping · Model Evaluation",
   },
   {
     id: "lockin-ai",
@@ -64,6 +67,7 @@ export const PROJECTS: Project[] = [
     image: "/lockin.png",
     demoUrl: "https://youtu.be/M90tyuMJuCk",
     githubUrl: "https://github.com/Daynel-Kem/LockInAI",
+    techStack: "Python · YOLO · OpenCV · FastAPI / Flask · Next.js · Real-Time Detection Pipeline · Session Analytics",
   },
   {
     id: "myroom",
@@ -72,6 +76,7 @@ export const PROJECTS: Project[] = [
       "Used Unity to create an interactive 3D personal portfolio exported as webGL and embedded in React.js with panel overlays and animations and 2D fallbacks in case of load fails",
     image: "/room.png",
     githubUrl: "https://github.com/akashkothari2007/InteractivePortfolio",
+    techStack: "Unity · WebGL · C# · React · TypeScript · WASM · Panel Animation Architecture · Progressive Fallback Design",
   },
   {
     id: "finger-pointer",
@@ -80,6 +85,7 @@ export const PROJECTS: Project[] = [
       "Wearable finger‑mounted pointing device built with an ESP32, MPU6050 IMU, and custom firmware to control the mouse cursor and clicks via gestures, designed for alternative input accessibility.",
     image: "/fingerpointer.png",
     githubUrl: "https://github.com/akashkothari2007/FingerPointer",
+    techStack: "ESP32 · MPU6050 IMU · C/C++ · Embedded Firmware · Sensor Fusion · Serial Communication",
   },
   {
     id: "gyro-robot",
@@ -89,6 +95,7 @@ export const PROJECTS: Project[] = [
     image: "/finalrobot.png",
     demoUrl: "https://www.youtube.com/shorts/jFM6bGMcFYE",
     githubUrl: "https://github.com/akashkothari2007/GyroscopeRobot",
+    techStack: "Arduino · MPU6050 · PID Control · Motor Drivers · Embedded C++ · Sensor Feedback Loops",
   },
 ];
 
@@ -168,7 +175,12 @@ export default function ProjectsPanel({
             <h2 className="project-detail-title">{selectedProject.name}</h2>
             <p className="project-detail-desc">{selectedProject.description}</p>
 
-            
+            {selectedProject.techStack && (
+              <div className="project-detail-tech">
+                <span className="project-detail-tech-label">Tech:</span>
+                <span className="project-detail-tech-stack">{selectedProject.techStack}</span>
+              </div>
+            )}
 
             <div className="project-detail-links">
               {selectedProject.demoUrl && (
@@ -240,6 +252,9 @@ export default function ProjectsPanel({
                   <div className="project-info">
                     <span className="project-name">{project.name}</span>
                     <span className="project-desc">{project.description}</span>
+                    {project.techStack && (
+                      <span className="project-tech">Tech: {project.techStack}</span>
+                    )}
                   </div>
                 </div>
               ))}
