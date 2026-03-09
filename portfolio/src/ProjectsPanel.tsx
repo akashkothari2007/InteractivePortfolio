@@ -155,21 +155,21 @@ export default function ProjectsPanel({
         className="projects-panel"
         onClick={(e) => e.stopPropagation()}
       >
-        <button
-          className="projects-close"
-          onClick={() => {
-            if (selectedProject) {
-              setSelectedProject(null);
-              playBlip("close");
-            } else {
-              playBlip("close");
-              onClose();
-            }
-          }}
-          aria-label={selectedProject ? "Back" : "Close"}
-        >
-          {selectedProject ? "←" : "×"}
-        </button>
+        <div className="panel-titlebar">
+          <div className="panel-traffic-lights">
+            <button
+              className="traffic-light traffic-light--close"
+              onClick={() => {
+                if (selectedProject) { setSelectedProject(null); playBlip("close"); }
+                else { playBlip("close"); onClose(); }
+              }}
+              aria-label={selectedProject ? "Back" : "Close"}
+            />
+          </div>
+          <span className="panel-titlebar-title">
+            {selectedProject ? `~/projects/${selectedProject.id}` : "~/projects"}
+          </span>
+        </div>
 
         {selectedProject ? (
           <div className="project-detail">
@@ -224,12 +224,8 @@ export default function ProjectsPanel({
           </div>
         ) : (
           <>
-            <div className="projects-header">PROJECTS — C:\</div>
-            <div className="projects-separator" />
-            <div className="projects-prompt">C:\&gt;_</div>
-
             <div className="projects-list">
-              {PROJECTS.map((project) => (
+              {PROJECTS.map((project, i) => (
                 <div
                   key={project.id}
                   className="project-card"
@@ -238,24 +234,7 @@ export default function ProjectsPanel({
                     setSelectedProject(project);
                   }}
                 >
-                  <div className="project-icon">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                      <polyline points="14 2 14 8 20 8" />
-                      <line x1="16" y1="13" x2="8" y2="13" />
-                      <line x1="16" y1="17" x2="8" y2="17" />
-                      <polyline points="10 9 9 9 8 9" />
-                    </svg>
-                  </div>
+                  <span className="project-index">{String(i + 1).padStart(2, "0")}</span>
                   <div className="project-info">
                     <span className="project-name">{project.name}</span>
                     <span className="project-desc">{project.description}</span>
@@ -263,11 +242,11 @@ export default function ProjectsPanel({
                       const tags = project.techStack.split(" · ");
                       return (
                         <div className="tech-tags project-card-tech">
-                          {tags.slice(0, 3).map((t) => (
+                          {tags.slice(0, 4).map((t) => (
                             <span key={t} className="tech-tag">{t}</span>
                           ))}
-                          {tags.length > 3 && (
-                            <span className="tech-tag-more">+{tags.length - 3}</span>
+                          {tags.length > 4 && (
+                            <span className="tech-tag-more">+{tags.length - 4}</span>
                           )}
                         </div>
                       );

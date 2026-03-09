@@ -79,19 +79,16 @@ export default function AboutPanel({ isOpen, onClose }: AboutPanelProps) {
       }}
     >
       <div className="about-panel" onClick={(e) => e.stopPropagation()}>
-        <button
-          className="about-close"
-          onClick={() => {
-            playBlip("close");
-            onClose();
-          }}
-          aria-label="Close about panel"
-        >
-          ×
-        </button>
-
-        <div className="about-header">ABOUT ME — C:\</div>
-        <div className="about-separator" />
+        <div className="panel-titlebar">
+          <div className="panel-traffic-lights">
+            <button
+              className="traffic-light traffic-light--close"
+              onClick={() => { playBlip("close"); onClose(); }}
+              aria-label="Close"
+            />
+          </div>
+          <span className="panel-titlebar-title">~/.about</span>
+        </div>
 
         <div className="about-layout">
           <div className="about-guitar">
@@ -103,6 +100,10 @@ export default function AboutPanel({ isOpen, onClose }: AboutPanelProps) {
           </div>
 
           <div className="about-content">
+            <div className="about-status">
+              <span className="about-status-dot" aria-hidden="true" />
+              Available for Summer 2026 internships
+            </div>
             <p className="about-line">
               Computer Engineering @ University of Waterloo.
             </p>

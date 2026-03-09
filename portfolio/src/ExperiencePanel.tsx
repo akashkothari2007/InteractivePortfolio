@@ -142,19 +142,16 @@ export default function ExperiencePanel({
         className="experience-panel"
         onClick={(e) => e.stopPropagation()}
       >
-        <button
-          className="experience-close"
-          onClick={() => {
-            playBlip("close");
-            onClose();
-          }}
-          aria-label="Close experience panel"
-        >
-          ×
-        </button>
-
-        <div className="experience-header">EXPERIENCE — main</div>
-        <div className="experience-separator" />
+        <div className="panel-titlebar">
+          <div className="panel-traffic-lights">
+            <button
+              className="traffic-light traffic-light--close"
+              onClick={() => { playBlip("close"); onClose(); }}
+              aria-label="Close"
+            />
+          </div>
+          <span className="panel-titlebar-title">git log --oneline</span>
+        </div>
 
         <div className="experience-layout">
           <div className="experience-timeline">
