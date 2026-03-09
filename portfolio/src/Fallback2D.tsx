@@ -3,6 +3,14 @@ import { PROJECTS, type Project } from "./ProjectsPanel";
 import { EXPERIENCES, type Experience } from "./ExperiencePanel";
 import ProjectImage from "./ProjectImage";
 
+const SKILLS_DATA = [
+  { label: "Languages", tags: ["Python", "C/C++", "Java", "C#", "JavaScript (ES6+)", "TypeScript", "SQL"] },
+  { label: "Frameworks & Platforms", tags: ["Flask", "React", "Next.js", "Electron", "Node.js", "Azure", "Microsoft Graph API", "Unity", "WebGL"] },
+  { label: "Machine Learning", tags: ["PyTorch", "Scikit-learn", "XGBoost", "Pandas", "Computer Vision", "YOLO", "OpenCV"] },
+  { label: "Developer Tools", tags: ["Git", "VS Code", "Postman", "Kubernetes", "Jira", "Confluence"] },
+  { label: "Hardware & Electronics", tags: ["Arduino", "Raspberry Pi", "ESP32", "IMUs", "PID Control"] },
+];
+
 export default function Fallback2D() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(
     PROJECTS[0] ?? null,
@@ -92,6 +100,14 @@ export default function Fallback2D() {
       id="fallback-2d"
     >
       {booted && <div className="fallback-scanline" aria-hidden="true" />}
+      <div
+        className="fallback-hero fade-item"
+        style={{ "--fade-delay": "0ms" } as CSSProperties}
+      >
+        <span className="fallback-hero-prompt">$ whoami</span>
+        <h1 className="fallback-hero-name">Akash Kothari</h1>
+        <span className="fallback-hero-tagline">Computer Engineering @ University of Waterloo · AI · Systems · Interactive Visuals</span>
+      </div>
       <div className="fallback-inner">
 
         <div className="fallback-left">
@@ -251,26 +267,16 @@ export default function Fallback2D() {
           <div className="fallback-block fade-item" style={{ "--fade-delay": "600ms" } as CSSProperties}>
             <h2 className="fallback-heading">TECHNICAL SKILLS</h2>
             <div className="fallback-skills">
-              <div className="fallback-skills-category">
-                <span className="fallback-skills-label">Languages:</span>
-                <span className="fallback-skills-list">Python, C/C++, Java, C#, JavaScript (ES6+), SQL, TypeScript</span>
-              </div>
-              <div className="fallback-skills-category">
-                <span className="fallback-skills-label">Frameworks & Platforms:</span>
-                <span className="fallback-skills-list">Flask, React, Next.js, Electron, Node.js, Azure, Microsoft Graph API, Unity, WebGL</span>
-              </div>
-              <div className="fallback-skills-category">
-                <span className="fallback-skills-label">Machine Learning:</span>
-                <span className="fallback-skills-list">Scikit-learn, PyTorch, XGBoost, Pandas, Data Preprocessing, Model Tuning, Computer Vision, YOLO, OpenCV</span>
-              </div>
-              <div className="fallback-skills-category">
-                <span className="fallback-skills-label">Developer Tools:</span>
-                <span className="fallback-skills-list">Git, VS Code, Postman, Kubernetes, Jira, Confluence</span>
-              </div>
-              <div className="fallback-skills-category">
-                <span className="fallback-skills-label">Hardware & Electronics:</span>
-                <span className="fallback-skills-list">Arduino, Raspberry Pi, ESP32, IMUs, PID Control Systems</span>
-              </div>
+              {SKILLS_DATA.map((category) => (
+                <div key={category.label} className="fallback-skills-category">
+                  <span className="fallback-skills-label">{category.label}</span>
+                  <div className="fallback-skills-tags">
+                    {category.tags.map((tag) => (
+                      <span key={tag} className="fallback-skill-tag">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
