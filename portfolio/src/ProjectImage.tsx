@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface ProjectImageProps {
   src: string;
@@ -14,15 +14,21 @@ export default function ProjectImage({
   imgClassName = "",
 }: ProjectImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     setIsLoaded(false);
+    // If image is already cached, complete fires before React's onLoad handler
+    if (imgRef.current?.complete && imgRef.current.naturalWidth > 0) {
+      setIsLoaded(true);
+    }
   }, [src]);
 
   return (
     <div className={`project-image-wrapper ${className}`.trim()}>
       {!isLoaded && <div className="project-image-shimmer" aria-hidden="true" />}
       <img
+        ref={imgRef}
         src={src}
         alt={alt}
         className={`project-image ${imgClassName}`.trim()}

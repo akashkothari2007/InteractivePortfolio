@@ -178,8 +178,11 @@ export default function ProjectsPanel({
 
             {selectedProject.techStack && (
               <div className="project-detail-tech">
-                <span className="project-detail-tech-label">Tech:</span>
-                <span className="project-detail-tech-stack">{selectedProject.techStack}</span>
+                <div className="tech-tags">
+                  {selectedProject.techStack.split(" · ").map((t) => (
+                    <span key={t} className="tech-tag">{t}</span>
+                  ))}
+                </div>
               </div>
             )}
 
@@ -256,9 +259,19 @@ export default function ProjectsPanel({
                   <div className="project-info">
                     <span className="project-name">{project.name}</span>
                     <span className="project-desc">{project.description}</span>
-                    {project.techStack && (
-                      <span className="project-tech">Tech: {project.techStack}</span>
-                    )}
+                    {project.techStack && (() => {
+                      const tags = project.techStack.split(" · ");
+                      return (
+                        <div className="tech-tags project-card-tech">
+                          {tags.slice(0, 3).map((t) => (
+                            <span key={t} className="tech-tag">{t}</span>
+                          ))}
+                          {tags.length > 3 && (
+                            <span className="tech-tag-more">+{tags.length - 3}</span>
+                          )}
+                        </div>
+                      );
+                    })()}
                   </div>
                 </div>
               ))}

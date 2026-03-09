@@ -189,12 +189,18 @@ export default function ExperiencePanel({
           </div>
 
           <div className="experience-detail">
-            <h2 className="experience-detail-title">{selected?.title}</h2>
             <p className="experience-detail-company">{selected?.company}</p>
+            <h2 className="experience-detail-title">{selected?.title}</h2>
             <p className="experience-detail-period">{selected?.period}</p>
             <p className="experience-detail-summary">{selected?.summary}</p>
             {selected?.tech && (
-              <p className="experience-detail-tech">{selected.tech}</p>
+              <div className="experience-detail-tech">
+                <div className="tech-tags">
+                  {selected.tech.split(" • ").map((t) => (
+                    <span key={t} className="tech-tag">{t}</span>
+                  ))}
+                </div>
+              </div>
             )}
           </div>
         </div>

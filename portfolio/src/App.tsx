@@ -97,10 +97,19 @@ export default function App() {
               Experience
             </button>
             <button className="header-btn" onClick={openAbout}>
-              About me
+              About
             </button>
+            <div className="header-divider" />
+            <a
+              href="/Akash_Kothari_Resume-3.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="header-btn header-btn-accent"
+            >
+              Resume ↗
+            </a>
             <button className="header-btn" onClick={scrollToFallback}>
-              View in 2D
+              View 2D ↓
             </button>
           </nav>
         </header>
