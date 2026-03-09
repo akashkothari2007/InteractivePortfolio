@@ -226,11 +226,14 @@ export default function Fallback2D() {
                 <p className="fallback-text">{selectedProject.description}</p>
 
                 <div className="fallback-project-image">
-                  {selectedProject.image ? (
-                    <ProjectImage
-                      src={selectedProject.image}
-                      alt={selectedProject.name}
-                    />
+                  {selectedProject.images && selectedProject.images.length > 1 ? (
+                    <div className="project-detail-images-row">
+                      {selectedProject.images.map((src, i) => (
+                        <ProjectImage key={i} src={src} alt={`${selectedProject.name} screenshot ${i + 1}`} />
+                      ))}
+                    </div>
+                  ) : selectedProject.image ? (
+                    <ProjectImage src={selectedProject.image} alt={selectedProject.name} />
                   ) : (
                     <div className="fallback-project-image-placeholder">
                       <span>Add project image</span>

@@ -27,6 +27,7 @@ export interface Project {
   name: string;
   description: string;
   image?: string;
+  images?: string[];
   demoUrl?: string;
   githubUrl?: string;
   techStack?: string;
@@ -40,6 +41,16 @@ interface ProjectsPanelProps {
 }
 
 export const PROJECTS: Project[] = [
+  {
+    id: "focusos",
+    name: "FocusOS — Personal Productivity Dashboard",
+    description:
+      "Full-stack productivity dashboard built from scratch. Python/FastAPI REST API backed by PostgreSQL (psycopg3), containerized with Docker Compose, and structured with modular routers. Integrates Microsoft Graph API via a full OAuth 2.0 flow to scan Outlook emails through an LLM pipeline that automatically surfaces job applications, recruiter outreach, and interview invites. Features drag-and-drop task management with subtasks (JSONB), habit tracking with daily streaks and completion grids, and start/stop focus session timers. Deployed on Render with a phone scripting endpoint — add tasks or trigger actions via Siri.",
+    image: "/focusos.png",
+    images: ["/focusos.png", "/focusos2.png"],
+    githubUrl: "https://github.com/akashkothari2007/FocusOS",
+    techStack: "Python · FastAPI · PostgreSQL · Docker Compose · React · Vite · TypeScript · Microsoft Graph API · OAuth 2.0 · LLM Integration · Render",
+  },
   {
     id: "mathora",
     name: "Mathora — AI‑Driven Interactive Math Visualizer",
@@ -210,11 +221,14 @@ export default function ProjectsPanel({
       
             </div>
             <div className="project-detail-image">
-              {selectedProject.image ? (
-                <ProjectImage
-                  src={selectedProject.image}
-                  alt={selectedProject.name}
-                />
+              {selectedProject.images && selectedProject.images.length > 1 ? (
+                <div className="project-detail-images-row">
+                  {selectedProject.images.map((src, i) => (
+                    <ProjectImage key={i} src={src} alt={`${selectedProject.name} screenshot ${i + 1}`} />
+                  ))}
+                </div>
+              ) : selectedProject.image ? (
+                <ProjectImage src={selectedProject.image} alt={selectedProject.name} />
               ) : (
                 <div className="project-detail-image-placeholder">
                   <span>Add image to project</span>

@@ -383,6 +383,17 @@
   border: 1px solid rgba(160, 224, 160, 0.15);
 }
 
+.project-detail-images-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.project-detail-images-row .project-image-wrapper {
+  flex: 1;
+  min-width: 0;
+}
+
 .project-detail-image .project-image-wrapper,
 .fallback-project-image .project-image-wrapper {
   display: block;
