@@ -102,7 +102,7 @@ export default function AboutPanel({ isOpen, onClose }: AboutPanelProps) {
           <div className="about-content">
             <div className="about-status">
               <span className="about-status-dot" aria-hidden="true" />
-              Available for Summer 2026 internships
+              Available for Fall 2026 internships
             </div>
             <p className="about-line">
               Computer Engineering @ University of Waterloo.
