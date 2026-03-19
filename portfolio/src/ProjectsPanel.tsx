@@ -57,7 +57,7 @@ export const PROJECTS: Project[] = [
     description:
       "Built an AI‑powered math visualization engine that plots functions, animates transformations, and walks through problem‑solving steps in real time using React Three Fiber, Three.js, and LLM‑driven timelines.",
     image: "/mathora.png",
-    demoUrl: "https://youtube.com",
+    demoUrl: "https://www.youtube.com/watch?v=CGYAKo7KKuw",
     githubUrl: "https://github.com/akashkothari2007/Mathora",
     techStack: "React · React Three Fiber · Three.js · TypeScript · LLM APIs · Custom Animation Timeline System · Node.js",
   },
