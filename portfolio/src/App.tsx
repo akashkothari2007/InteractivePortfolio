@@ -101,7 +101,7 @@ export default function App() {
             </button>
             <div className="header-divider" />
             <a
-              href="/Akash_Kothari_Resume-3.pdf"
+              href="/Akash_Kothari_Resume-6.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="header-btn header-btn-accent"

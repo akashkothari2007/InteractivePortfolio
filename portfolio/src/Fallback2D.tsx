@@ -145,7 +145,7 @@ export default function Fallback2D() {
                 LinkedIn →
               </a>
               <a
-                href="/Akash_Kothari_Resume-3.pdf"
+                href="/Akash_Kothari_Resume-6.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="fallback-contact-link"
