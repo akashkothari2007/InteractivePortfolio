@@ -11,18 +11,19 @@ const SKILLS_DATA = [
   { label: "Hardware & Electronics", tags: ["Arduino", "Raspberry Pi", "ESP32", "IMUs", "PID Control"] },
 ];
 
-export default function Fallback2D() {
+export default function Fallback2D({ isMobile = false }: { isMobile?: boolean }) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(
     PROJECTS[0] ?? null,
   );
   const [selectedExperience, setSelectedExperience] = useState<Experience | null>(
     EXPERIENCES[0] ?? null,
   );
-  const [booted, setBooted] = useState(false);
+  const [booted, setBooted] = useState(isMobile);
   const [typedAbout, setTypedAbout] = useState("ABOUT ME");
   const sectionRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
+    if (isMobile) return; // already booted
     const node = sectionRef.current;
     if (!node) return;
 
@@ -40,7 +41,7 @@ export default function Fallback2D() {
 
     observer.observe(node);
     return () => observer.disconnect();
-  }, []);
+  }, [isMobile]);
 
   useEffect(() => {
     if (!booted) return;
@@ -107,12 +108,17 @@ export default function Fallback2D() {
         <span className="fallback-hero-prompt">$ whoami</span>
         <h1 className="fallback-hero-name">Akash Kothari</h1>
         <span className="fallback-hero-tagline">Computer Engineering @ University of Waterloo · AI · Systems · Interactive Visuals</span>
+        <div className="fallback-hero-links">
+          <a href="/Akash_Kothari_Resume-6.pdf" target="_blank" rel="noopener noreferrer" className="fallback-hero-link fallback-hero-link--accent">Resume ↗</a>
+          <a href="https://linkedin.com/in/akashkothari07" target="_blank" rel="noopener noreferrer" className="fallback-hero-link">LinkedIn →</a>
+          <a href="https://github.com/akashkothari2007" target="_blank" rel="noopener noreferrer" className="fallback-hero-link">GitHub →</a>
+        </div>
       </div>
       <div className="fallback-inner">
 
         <div className="fallback-left">
           <div
-            className="fallback-block fade-item"
+            className="fallback-block fallback-about-block fade-item"
             style={{ "--fade-delay": "0ms" } as CSSProperties}
           >
             <h2 className="fallback-heading">
@@ -178,6 +184,12 @@ export default function Fallback2D() {
                   </span>
                   <span className="fallback-experience-period">
                     {exp.period}
+                    {exp.current && (
+                      <span className="exp-current-badge">
+                        <span className="exp-current-dot" />
+                        currently here
+                      </span>
+                    )}
                   </span>
                 </button>
               ))}

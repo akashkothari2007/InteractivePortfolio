@@ -179,6 +179,15 @@
   filter: brightness(1.15) saturate(1.1) !important;
 }
 
+.traffic-light--minimize {
+  background: #ffbd2e;
+  cursor: pointer;
+}
+
+.traffic-light--minimize:hover {
+  filter: brightness(1.15) saturate(1.1) !important;
+}
+
 
 .panel-titlebar-title {
   flex: 1;
@@ -800,6 +809,32 @@
   }
 }
 
+/* ── Currently here badge ──────────────────── */
+.exp-current-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.68rem;
+  color: rgba(40, 200, 64, 0.9);
+  background: rgba(40, 200, 64, 0.08);
+  border: 1px solid rgba(40, 200, 64, 0.25);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.exp-current-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #28c840;
+  box-shadow: 0 0 5px rgba(40, 200, 64, 0.7);
+  animation: status-dot-blink 2.5s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
 /* 2D fallback section */
 .fallback-2d {
   position: relative;
@@ -1147,6 +1182,144 @@
 
   .fallback-projects {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ── Mobile hero quick-links (hidden on desktop) ── */
+.fallback-hero-links {
+  display: none;
+}
+
+/* ── Mobile styles ─────────────────────────────── */
+@media (max-width: 768px) {
+  .fallback-hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.1rem;
+  }
+
+  .fallback-hero-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(160, 224, 160, 0.35);
+    background: rgba(0, 0, 0, 0.25);
+    color: #a0e0a0;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .fallback-hero-link:active {
+    background: rgba(160, 224, 160, 0.15);
+    border-color: rgba(160, 224, 160, 0.6);
+  }
+
+  .fallback-hero-link--accent {
+    background: rgba(160, 224, 160, 0.12);
+    border-color: rgba(160, 224, 160, 0.5);
+    font-weight: 500;
+  }
+
+  /* Hide about me block — hero already covers it */
+  .fallback-about-block {
+    display: none;
+  }
+
+  .fallback-2d {
+    padding: 1.75rem 1rem 3rem;
+  }
+
+  .fallback-hero {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .fallback-hero-name {
+    font-size: clamp(1.9rem, 8vw, 2.4rem);
+  }
+
+  .fallback-hero-tagline {
+    font-size: 0.76rem;
+    line-height: 1.6;
+  }
+
+  .fallback-inner {
+    gap: 1.25rem;
+  }
+
+  .fallback-block {
+    padding: 1rem;
+  }
+
+  .fallback-experience-item {
+    min-height: 52px;
+    padding: 0.7rem 0.75rem;
+  }
+
+  .fallback-project-item {
+    min-height: 44px;
+    padding: 0.65rem 0.75rem;
+  }
+
+  .fallback-project-name {
+    font-size: 0.88rem;
+  }
+
+  .fallback-project-detail {
+    padding: 0.875rem 1rem;
+  }
+
+  .fallback-project-title {
+    font-size: 0.9rem;
+  }
+
+  .fallback-text {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .fallback-heading {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+  }
+
+  .fallback-skill-tag {
+    font-size: 0.72rem;
+    padding: 0.22rem 0.6rem;
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .fallback-skills {
+    gap: 0.65rem;
+  }
+
+  .fallback-skills-tags {
+    gap: 0.35rem;
+  }
+
+  /* Larger touch area for project images */
+  .fallback-project-image {
+    margin-top: 0.6rem;
+  }
+
+  /* Project links as full-width pills on mobile */
+  .fallback-project-links {
+    gap: 0.5rem;
+  }
+
+  .project-link {
+    flex: 1;
+    justify-content: center;
+    min-height: 44px;
+    font-size: 0.85rem;
   }
 }
 

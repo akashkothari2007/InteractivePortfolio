@@ -45,7 +45,7 @@ export const PROJECTS: Project[] = [
     id: "focusos",
     name: "FocusOS — Personal Productivity Dashboard",
     description:
-      "Full-stack productivity dashboard built from scratch. Python/FastAPI REST API backed by PostgreSQL (psycopg3), containerized with Docker Compose, and structured with modular routers. Integrates Microsoft Graph API via a full OAuth 2.0 flow to scan Outlook emails through an LLM pipeline that automatically surfaces job applications, recruiter outreach, and interview invites. Features drag-and-drop task management with subtasks (JSONB), habit tracking with daily streaks and completion grids, and start/stop focus session timers. Deployed on Render with a phone scripting endpoint — add tasks or trigger actions via Siri.",
+      "Full-stack productivity dashboard with a FastAPI/PostgreSQL backend containerized with Docker Compose. Integrates Microsoft Graph via OAuth 2.0 to scan emails through an LLM pipeline, with drag-and-drop task management, habit tracking, focus timers, and a Siri scripting endpoint.",
     image: "/focusos.png",
     images: ["/focusos.png", "/focusos2.png"],
     githubUrl: "https://github.com/akashkothari2007/FocusOS",
@@ -170,12 +170,16 @@ export default function ProjectsPanel({
           <div className="panel-traffic-lights">
             <button
               className="traffic-light traffic-light--close"
-              onClick={() => {
-                if (selectedProject) { setSelectedProject(null); playBlip("close"); }
-                else { playBlip("close"); onClose(); }
-              }}
-              aria-label={selectedProject ? "Back" : "Close"}
+              onClick={() => { playBlip("close"); onClose(); }}
+              aria-label="Close"
             />
+            {selectedProject && (
+              <button
+                className="traffic-light traffic-light--minimize"
+                onClick={() => { setSelectedProject(null); playBlip("close"); }}
+                aria-label="Back to projects"
+              />
+            )}
           </div>
           <span className="panel-titlebar-title">
             {selectedProject ? `~/projects/${selectedProject.id}` : "~/projects"}

@@ -7,9 +7,16 @@ import Fallback2D from "./Fallback2D";
 import "./App.css";
 
 export default function App() {
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
   const [projectsOpen, setProjectsOpen] = useState(false);
   const [experienceOpen, setExperienceOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, []);
 
   useEffect(() => {
     function handleMessage(event: MessageEvent) {
@@ -76,6 +83,14 @@ export default function App() {
       el.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  if (isMobile) {
+    return (
+      <div className="app">
+        <Fallback2D isMobile />
+      </div>
+    );
+  }
 
   return (
     <div className="app">

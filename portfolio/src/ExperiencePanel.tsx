@@ -41,6 +41,7 @@ export interface Experience {
   period: string;
   summary: string;
   tech?: string;
+  current?: boolean;
 }
 
 interface ExperiencePanelProps {
@@ -52,11 +53,12 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "exp1",
     company: "RamSoft",
-    title: "AI/ML Powered Software Engineering Intern",
+    title: "Software Engineering Intern · AI/ML",
     period: "Jan 2026 – Present",
+    current: true,
     summary:
-      "Developing AI‑driven automation features for a healthcare workflow platform using open source and fine tuned models, backend services, and internal APIs. Contributing to a large enterprise C# codebase with auth, request validation, and robust unit tests. Working with Azure and using Kubernetes for deployments and management.",
-    tech: "C# • Azure • Kubernetes • Microservices • Hugging Face • PyTorch",
+      "Deployed an open-source ASR model on Azure via Docker and Kubernetes for internal clinical testing, reducing transcription costs and improving accuracy over the existing solution. Migrating Appointments and Reservations from CosmosDB to SQL Server with a wall clock time schema, eliminating UTC conversion complexity. Cleared 50+ stale feature flags and debugged CI/CD pipelines across a large enterprise C# codebase.",
+    tech: "C# • Azure • Docker • Kubernetes • SQL Server • CosmosDB • ASR • Hugging Face",
   },
   {
     id: "exp2",
@@ -188,7 +190,15 @@ export default function ExperiencePanel({
           <div className="experience-detail">
             <p className="experience-detail-company">{selected?.company}</p>
             <h2 className="experience-detail-title">{selected?.title}</h2>
-            <p className="experience-detail-period">{selected?.period}</p>
+            <p className="experience-detail-period">
+              {selected?.period}
+              {selected?.current && (
+                <span className="exp-current-badge">
+                  <span className="exp-current-dot" />
+                  currently here
+                </span>
+              )}
+            </p>
             <p className="experience-detail-summary">{selected?.summary}</p>
             {selected?.tech && (
               <div className="experience-detail-tech">
