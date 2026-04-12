@@ -96,6 +96,7 @@ export default function ExperiencePanel({
   const [selected, setSelected] = useState<Experience | null>(EXPERIENCES[0]);
   const overlayRef = useRef<HTMLDivElement | null>(null);
 
+  //if it opens (becomes true), default
   useEffect(() => {
     if (isOpen) {
       setSelected(EXPERIENCES[0]);
@@ -103,6 +104,7 @@ export default function ExperiencePanel({
     }
   }, [isOpen]);
 
+  //handle escape key, if selected is not the first experience, set it to the first experience, otherwise close the panel
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {

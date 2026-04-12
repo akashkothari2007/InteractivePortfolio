@@ -46,8 +46,6 @@ export const PROJECTS: Project[] = [
     name: "FocusOS — Personal Productivity Dashboard",
     description:
       "Full-stack productivity dashboard with a FastAPI/PostgreSQL backend containerized with Docker Compose. Integrates Microsoft Graph via OAuth 2.0 to scan emails through an LLM pipeline, with drag-and-drop task management, habit tracking, focus timers, and a Siri scripting endpoint.",
-    image: "/focusos.png",
-    images: ["/focusos.png", "/focusos2.png"],
     githubUrl: "https://github.com/akashkothari2007/FocusOS",
     techStack: "Python · FastAPI · PostgreSQL · Docker Compose · React · Vite · TypeScript · Microsoft Graph API · OAuth 2.0 · LLM Integration · Render",
   },
@@ -164,7 +162,7 @@ export default function ProjectsPanel({
       <div
         ref={panelRef}
         className="projects-panel"
-        onClick={(e) => e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()} // prevent clicks from bubbling up to the overlay
       >
         <div className="panel-titlebar">
           <div className="panel-traffic-lights">
@@ -224,21 +222,20 @@ export default function ProjectsPanel({
               )}
       
             </div>
-            <div className="project-detail-image">
-              {selectedProject.images && selectedProject.images.length > 1 ? (
-                <div className="project-detail-images-row">
-                  {selectedProject.images.map((src, i) => (
-                    <ProjectImage key={i} src={src} alt={`${selectedProject.name} screenshot ${i + 1}`} />
-                  ))}
-                </div>
-              ) : selectedProject.image ? (
-                <ProjectImage src={selectedProject.image} alt={selectedProject.name} />
-              ) : (
-                <div className="project-detail-image-placeholder">
-                  <span>Add image to project</span>
-                </div>
-              )}
-            </div>
+            {((selectedProject.images && selectedProject.images.length > 1) ||
+              Boolean(selectedProject.image)) && (
+              <div className="project-detail-image">
+                {selectedProject.images && selectedProject.images.length > 1 ? (
+                  <div className="project-detail-images-row">
+                    {selectedProject.images.map((src, i) => (
+                      <ProjectImage key={i} src={src} alt={`${selectedProject.name} screenshot ${i + 1}`} />
+                    ))}
+                  </div>
+                ) : (
+                  <ProjectImage src={selectedProject.image!} alt={selectedProject.name} />
+                )}
+              </div>
+            )}
           </div>
         ) : (
           <>
