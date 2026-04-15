@@ -43,11 +43,21 @@ interface ProjectsPanelProps {
 export const PROJECTS: Project[] = [
   {
     id: "focusos",
-    name: "FocusOS — Personal Productivity Dashboard",
+    name: "FocusOS — Personal Productivity OS",
     description:
-      "Full-stack productivity dashboard with a FastAPI/PostgreSQL backend containerized with Docker Compose. Integrates Microsoft Graph via OAuth 2.0 to scan emails through an LLM pipeline, with drag-and-drop task management, habit tracking, focus timers, and a Siri scripting endpoint.",
+      "Full-stack productivity OS with an Azure OpenAI job-analysis pipeline that scores resume-job match, extracts ATS keywords, and generates tailored LaTeX resumes. Designed a multi-step background task pipeline with non-blocking AI calls, retry logic, and real-time status polling — deployed with Docker and PostgreSQL. Tracks session and habit metrics across 15+ days of continuous daily use via a normalized multi-table schema and React dashboard.",
+    image: "/focusos.png",
     githubUrl: "https://github.com/akashkothari2007/FocusOS",
-    techStack: "Python · FastAPI · PostgreSQL · Docker Compose · React · Vite · TypeScript · Microsoft Graph API · OAuth 2.0 · LLM Integration · Render",
+    techStack: "Python · FastAPI · PostgreSQL · Docker · React · TypeScript · Azure OpenAI · Microsoft Graph · OAuth 2.0 · Background Task Pipeline",
+  },
+  {
+    id: "mercury-mortgages",
+    name: "Mercury Mortgages — AI Expense Management System",
+    description:
+      "Full-stack expense management system for a local business processing 100+ receipts/week across 5 corporate cards, automating receipt matching and exportable expense reports — eliminating a manual role. Engineered a dual-ingestion pipeline (manual upload + email parsing via Microsoft Graph webhooks) with async background processing, threaded PDF conversion, and Azure OpenAI vision for field extraction. Built a rules engine mapping extracted vendor and location data to GL codes and sub-companies, with role-based access control and admin-gated expense report approvals and snapshots.",
+    image: "/mercury.png",
+    githubUrl: "https://github.com/akashkothari2007/KothariGroupReceiptSoftware",
+    techStack: "FastAPI · PostgreSQL · React · Microsoft Graph · Azure OpenAI Vision · Webhooks · Async Background Jobs · RBAC · Rules Engine",
   },
   {
     id: "mathora",

@@ -134,7 +134,7 @@ export default function AboutPanel({ isOpen, onClose }: AboutPanelProps) {
                 LinkedIn →
               </a>
               <a
-                href="/DefaultResume.pdf"
+                href="/Akash_Main_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="about-link"

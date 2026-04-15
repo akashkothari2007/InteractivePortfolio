@@ -7,17 +7,23 @@ import Fallback2D from "./Fallback2D";
 import "./App.css";
 
 export default function App() {
+  //check if the device is mobile
   const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
+  //check if the projects panel is open
   const [projectsOpen, setProjectsOpen] = useState(false);
+  //check if the experience panel is open
   const [experienceOpen, setExperienceOpen] = useState(false);
+  //check if the about panel is open
   const [aboutOpen, setAboutOpen] = useState(false);
 
+  //Resize function set up.Based on device
   useEffect(() => {
     const handler = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener("resize", handler);
     return () => window.removeEventListener("resize", handler);
   }, []);
 
+  //handle messages from unity
   useEffect(() => {
     function handleMessage(event: MessageEvent) {
       if (!event.data) return;
@@ -35,7 +41,7 @@ export default function App() {
         } else if (section === "github") {
           window.open("https://github.com/akashkothari2007", "_blank", "noopener,noreferrer");
         } else if (section === "resume") {
-          window.open("/DefaultResume.pdf", "_blank", "noopener,noreferrer");
+          window.open("/Akash_Main_Resume.pdf", "_blank", "noopener,noreferrer");
         } else if (section === "linkedin") {
           window.open("https://linkedin.com/in/akashkothari07", "_blank", "noopener,noreferrer");
         }
@@ -46,6 +52,7 @@ export default function App() {
     return () => window.removeEventListener("message", handleMessage);
   }, []);
 
+  //reset focus to unity canvas when panels are closed
   useEffect(() => {
     if (!projectsOpen && !experienceOpen && !aboutOpen) {
       const iframe = document.querySelector(".unity-iframe") as HTMLIFrameElement | null;
@@ -62,6 +69,7 @@ export default function App() {
     }
   }, [projectsOpen, experienceOpen, aboutOpen]);
 
+  //state functions
   const openProjects = () => {
     setProjectsOpen(true);
   };
@@ -73,7 +81,7 @@ export default function App() {
   const openAbout = () => {
     setAboutOpen(true);
   };
-
+// when u press view 2d
   const scrollToFallback = () => {
     setProjectsOpen(false);
     setExperienceOpen(false);
@@ -83,7 +91,7 @@ export default function App() {
       el.scrollIntoView({ behavior: "smooth" });
     }
   };
-
+// plain boring fallback 2d for mobile :()
   if (isMobile) {
     return (
       <div className="app">
@@ -95,10 +103,15 @@ export default function App() {
   return (
     <div className="app">
       <section className="hero">
+        {/* Unity Embed */}
         <UnityEmbed />
+        {/* Projects Panel */}
         <ProjectsPanel isOpen={projectsOpen} onClose={() => setProjectsOpen(false)} />
+        {/* Experience Panel */}
         <ExperiencePanel isOpen={experienceOpen} onClose={() => setExperienceOpen(false)} />
+        {/* About Panel */}
         <AboutPanel isOpen={aboutOpen} onClose={() => setAboutOpen(false)} />
+        
         <div className="hero-hint">
           Click around the room to explore projects, experience, and more.
         </div>
@@ -116,7 +129,7 @@ export default function App() {
             </button>
             <div className="header-divider" />
             <a
-              href="/DefaultResume.pdf"
+              href="/Akash_Main_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="header-btn header-btn-accent"

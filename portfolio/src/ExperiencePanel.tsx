@@ -57,8 +57,8 @@ export const EXPERIENCES: Experience[] = [
     period: "Jan 2026 – Present",
     current: true,
     summary:
-      "Deployed an open-source ASR model on Azure via Docker and Kubernetes for internal clinical testing, reducing transcription costs and improving accuracy over the existing solution. Migrating Appointments and Reservations from CosmosDB to SQL Server with a wall clock time schema, eliminating UTC conversion complexity. Cleared 50+ stale feature flags and debugged CI/CD pipelines across a large enterprise C# codebase.",
-    tech: "C# • Azure • Docker • Kubernetes • SQL Server • CosmosDB • ASR • Hugging Face",
+      "Built a MedASR transcription pipeline with chunked streaming and PyTorch word‑confidence scoring, cutting word error rate by 80% across 200 clinical audio samples. Designed a CosmosDB → SQL Server schema migration for a scheduling epic, producing normalized AppointmentV2 and Reservation tables with wall‑clock storage and full recurrence support. Stood up an internal MCP server for Azure SQL with MFA token auth, enabling natural‑language database queries for non‑technical teams. Cleaned up 50+ stale feature flags across the enterprise C# monorepo and unblocked CI/CD pipelines by repairing broken integration tests.",
+    tech: "C# • Azure • Docker • Kubernetes • SQL Server • CosmosDB • PyTorch • MCP • CI/CD",
   },
   {
     id: "exp2",
@@ -66,8 +66,8 @@ export const EXPERIENCES: Experience[] = [
     title: "Cloud Software Engineering Intern",
     period: "Jun 2025 – Sep 2025",
     summary:
-      "Built cloud services to process Microsoft Teams call recordings end‑to‑end using Azure and Microsoft Graph, reducing manual work for support teams by over 10 hours a week. Implemented webhooks, polling logic, and AI‑powered summarization integrated into customer tooling.",
-    tech: "C# • Azure • Microsoft Graph • Webhooks",
+      "Automated Microsoft Teams call recording retrieval using Azure, Microsoft Graph, and C#, eliminating 10+ hours a week of manual work for customer support teams. Built an AI summarization pipeline with webhook triggers and polling logic that processes 8+ transcripts per hour into structured Zendesk tickets, reducing team miscommunication. Owned the full dev lifecycle end‑to‑end, shipping production Azure tooling now expanded across internal teams.",
+    tech: "C# • Azure • Microsoft Graph • Webhooks • Zendesk • AI Summarization",
   },
   {
     id: "exp3",
@@ -75,7 +75,7 @@ export const EXPERIENCES: Experience[] = [
     title: "Embedded Firmware Developer",
     period: "Sep 2025 – Dec 2025",
     summary:
-      "Designed and programmed motor‑control firmware for an e‑bike mid‑drive system, integrating sensors, safety logic, and real‑time feedback on a student design team.",
+      "Designed and programmed motor‑control firmware for an e‑bike mid‑drive system on a student design team, integrating sensor input, safety interlocks, and real‑time feedback loops on a VESC‑based controller.",
     tech: "Embedded C • Motor control • VESC",
   },
   {
@@ -84,7 +84,7 @@ export const EXPERIENCES: Experience[] = [
     title: "Lead Instructor",
     period: "Sep 2023 – Sep 2025",
     summary:
-      "Led instruction for students in grades 1–12, tutoring math concepts and mentoring new instructors in teaching methods.",
+      "Led math instruction for 20+ students across grades 1–12, designing individualized learning plans and mentoring new instructors on teaching methodology and classroom management.",
     tech: "Teaching • Communication • Mentorship",
   },
 ];
