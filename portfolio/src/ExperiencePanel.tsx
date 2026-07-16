@@ -51,23 +51,31 @@ interface ExperiencePanelProps {
 
 export const EXPERIENCES: Experience[] = [
   {
+    id: "exp0",
+    company: "Shopify",
+    title: "Software Engineering Intern",
+    period: "Sep 2026 – Dec 2026",
+    summary:
+      "Incoming software engineering intern at Shopify.",
+  },
+  {
     id: "exp1",
-    company: "RamSoft",
-    title: "Software Engineering Intern · AI/ML",
-    period: "Jan 2026 – Present",
+    company: "QuiikMart",
+    title: "Full-Stack Software Engineering Intern",
+    period: "May 2026 – Present",
     current: true,
     summary:
-      "Built a MedASR transcription pipeline with chunked streaming and PyTorch word‑confidence scoring, cutting word error rate by 80% across 200 clinical audio samples. Designed a CosmosDB → SQL Server schema migration for a scheduling epic, producing normalized AppointmentV2 and Reservation tables with wall‑clock storage and full recurrence support. Stood up an internal MCP server for Azure SQL with MFA token auth, enabling natural‑language database queries for non‑technical teams. Cleaned up 50+ stale feature flags across the enterprise C# monorepo and unblocked CI/CD pipelines by repairing broken integration tests.",
-    tech: "C# • Azure • Docker • Kubernetes • SQL Server • CosmosDB • PyTorch • MCP • CI/CD",
+      "Built a recommendation engine with a nightly sweeper that rolls purchase totals into a baseline popularity store, layered with per-user signals and Redis caching for guest sessions. Built a bulk CSV product-upload system processing up to 1,000 products per upload with server-side validation, flexible column aliasing, category matching, and a two-step validate-then-import flow. Wrote 80+ unit and integration tests, validated features in staging environments, and shipped bug fixes across a NestJS/TypeScript and PostgreSQL codebase.",
+    tech: "NestJS • TypeScript • PostgreSQL • Redis • REST APIs • Testing",
   },
   {
     id: "exp2",
-    company: "Tripleview Technologies",
-    title: "Cloud Software Engineering Intern",
-    period: "Jun 2025 – Sep 2025",
+    company: "RamSoft",
+    title: "ML Software Engineering Intern",
+    period: "Jan 2026 – Apr 2026",
     summary:
-      "Automated Microsoft Teams call recording retrieval using Azure, Microsoft Graph, and C#, eliminating 10+ hours a week of manual work for customer support teams. Built an AI summarization pipeline with webhook triggers and polling logic that processes 8+ transcripts per hour into structured Zendesk tickets, reducing team miscommunication. Owned the full dev lifecycle end‑to‑end, shipping production Azure tooling now expanded across internal teams.",
-    tech: "C# • Azure • Microsoft Graph • Webhooks • Zendesk • AI Summarization",
+      "Built a real-time clinical transcription pipeline running MedASR (medical dictation) and WhisperFlow (voice commands) in parallel, fusing both streams via timestamp alignment and fuzzy word matching. Engineered chunked streaming, PyTorch word-confidence scoring, and a replay simulator for evaluation, cutting error rate by 80% across 200 clinical audio samples; deployed to Kubernetes via Azure Container Registry. Designed a Cosmos DB → SQL Server schema migration for a scheduling epic, with normalized appointment and reservation tables, wall-clock time storage, and full recurrence support. Built an internal MCP server for Azure SQL with MFA token auth, enabling natural-language database queries.",
+    tech: "C# • Python • PyTorch • Azure • Docker • Kubernetes • SQL Server • CosmosDB • MCP",
   },
   {
     id: "exp3",
@@ -75,11 +83,20 @@ export const EXPERIENCES: Experience[] = [
     title: "Embedded Firmware Developer",
     period: "Sep 2025 – Dec 2025",
     summary:
-      "Designed and programmed motor‑control firmware for an e‑bike mid‑drive system on a student design team, integrating sensor input, safety interlocks, and real‑time feedback loops on a VESC‑based controller.",
-    tech: "Embedded C • Motor control • VESC",
+      "Designed and programmed motor-control firmware for an e-bike mid-drive system on a student design team, integrating sensor input, safety interlocks, and real-time feedback loops on a VESC-based controller.",
+    tech: "Embedded C • Motor Control • VESC",
   },
   {
     id: "exp4",
+    company: "Tripleview Technologies",
+    title: "Cloud Software Engineering Intern",
+    period: "Jun 2025 – Sep 2025",
+    summary:
+      "Automated Teams call-recording retrieval with Azure, Microsoft Graph, and C#, removing 10+ hours/week of manual work for customer support teams. Built an AI summarization pipeline with webhook triggers and polling logic that turned 8+ transcripts/hour into structured Zendesk tickets, shipped to production and adopted across internal teams.",
+    tech: "C# • Azure • Microsoft Graph • Webhooks • Zendesk • AI Summarization",
+  },
+  {
+    id: "exp5",
     company: "Mathnasium – The Math Learning Center",
     title: "Lead Instructor",
     period: "Sep 2023 – Sep 2025",

@@ -109,7 +109,7 @@ export default function Fallback2D({ isMobile = false }: { isMobile?: boolean })
         <h1 className="fallback-hero-name">Akash Kothari</h1>
         <span className="fallback-hero-tagline">Computer Engineering @ University of Waterloo · AI · Systems · Interactive Visuals</span>
         <div className="fallback-hero-links">
-          <a href="/Akash_Kothari_Default_resume.pdf" target="_blank" rel="noopener noreferrer" className="fallback-hero-link fallback-hero-link--accent">Resume ↗</a>
+          <a href="/Akash_Kothari_Resume.pdf" target="_blank" rel="noopener noreferrer" className="fallback-hero-link fallback-hero-link--accent">Resume ↗</a>
           <a href="https://linkedin.com/in/akashkothari07" target="_blank" rel="noopener noreferrer" className="fallback-hero-link">LinkedIn →</a>
           <a href="https://github.com/akashkothari2007" target="_blank" rel="noopener noreferrer" className="fallback-hero-link">GitHub →</a>
         </div>
@@ -151,7 +151,7 @@ export default function Fallback2D({ isMobile = false }: { isMobile?: boolean })
                 LinkedIn →
               </a>
               <a
-                href="/Akash_Kothari_Default_resume.pdf"
+                href="/Akash_Kothari_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="fallback-contact-link"

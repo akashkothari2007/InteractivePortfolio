@@ -41,7 +41,7 @@ export default function App() {
         } else if (section === "github") {
           window.open("https://github.com/akashkothari2007", "_blank", "noopener,noreferrer");
         } else if (section === "resume") {
-          window.open("/Akash_Kothari_Default_resume.pdf", "_blank", "noopener,noreferrer");
+          window.open("/Akash_Kothari_Resume.pdf", "_blank", "noopener,noreferrer");
         } else if (section === "linkedin") {
           window.open("https://linkedin.com/in/akashkothari07", "_blank", "noopener,noreferrer");
         }
@@ -129,7 +129,7 @@ export default function App() {
             </button>
             <div className="header-divider" />
             <a
-              href="/Akash_Kothari_Default_resume.pdf"
+              href="/Akash_Kothari_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="header-btn header-btn-accent"

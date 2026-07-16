@@ -45,7 +45,7 @@ export const PROJECTS: Project[] = [
     id: "focusos",
     name: "FocusOS — Personal Productivity OS",
     description:
-      "Full-stack productivity OS with an Azure OpenAI job-analysis pipeline that scores resume-job match, extracts ATS keywords, and generates tailored LaTeX resumes. Designed a multi-step background task pipeline with non-blocking AI calls, retry logic, and real-time status polling — deployed with Docker and PostgreSQL. Tracks session and habit metrics across 15+ days of continuous daily use via a normalized multi-table schema and React dashboard.",
+      "Full-stack productivity OS with an Azure OpenAI job-analysis pipeline that scores resume-to-job match, extracts ATS keywords, and generates tailored LaTeX resumes. Designed a background task pipeline with non-blocking AI calls, retry logic, and real-time status polling — deployed with Docker and PostgreSQL. Tracks session and habit metrics across 15+ days of continuous daily use via a normalized multi-table schema and React dashboard.",
     image: "/focusos.png",
     githubUrl: "https://github.com/akashkothari2007/FocusOS",
     techStack: "Python · FastAPI · PostgreSQL · Docker · React · TypeScript · Azure OpenAI · Microsoft Graph · OAuth 2.0 · Background Task Pipeline",
@@ -54,16 +54,24 @@ export const PROJECTS: Project[] = [
     id: "mercury-mortgages",
     name: "Mercury Mortgages — AI Expense Management System",
     description:
-      "Full-stack expense management system for a local business processing 100+ receipts/week across 5 corporate cards, automating receipt matching and exportable expense reports — eliminating a manual role. Engineered a dual-ingestion pipeline (manual upload + email parsing via Microsoft Graph webhooks) with async background processing, threaded PDF conversion, and Azure OpenAI vision for field extraction. Built a rules engine mapping extracted vendor and location data to GL codes and sub-companies, with role-based access control and admin-gated expense report approvals and snapshots.",
+      "Full-stack expense-matching system that matched 600+ receipts to 450+ transactions across 19 sub-companies, eliminating a manual bookkeeping role. Engineered a dual-ingestion pipeline parsing 250+ emails via Microsoft Graph webhooks, using GPT-4o Vision to extract receipt data and a Redis job queue with threaded workers for async PDF processing. Built a rules engine mapping vendor and location data to GL codes, with Microsoft SSO and role-based access control.",
     image: "/mercury.png",
     githubUrl: "https://github.com/akashkothari2007/KothariGroupReceiptSoftware",
-    techStack: "FastAPI · PostgreSQL · React · Microsoft Graph · Azure OpenAI Vision · Webhooks · Async Background Jobs · RBAC · Rules Engine",
+    techStack: "React · FastAPI · Supabase · GPT-4o Vision · Microsoft Graph · Redis · Webhooks · RBAC · Rules Engine",
+  },
+  {
+    id: "rl-car",
+    name: "Self-Driving Car Simulator (RL)",
+    description:
+      "A Unity simulation with vehicle physics built from scratch — raycast suspension, tire grip curves, and braking — paired with a hand-written reinforcement learning loop (no ML-Agents). The agent learns to drive using 16 raycast sensors and a custom reward function, reaching 92% lap-completion rate within 500 training episodes.",
+    image: "/RLCar.png",
+    techStack: "Unity · C# · Reinforcement Learning · Custom Physics · Raycasting · Reward Shaping · Vehicle Dynamics",
   },
   {
     id: "mathora",
     name: "Mathora — AI‑Driven Interactive Math Visualizer",
     description:
-      "Built an AI‑powered math visualization engine that plots functions, animates transformations, and walks through problem‑solving steps in real time using React Three Fiber, Three.js, and LLM‑driven timelines.",
+      "AI-powered math visualization engine that plots functions, animates transformations, and walks through problem-solving steps in real time using React Three Fiber, Three.js, and LLM-driven timelines.",
     image: "/mathora.png",
     demoUrl: "https://www.youtube.com/watch?v=CGYAKo7KKuw",
     githubUrl: "https://github.com/akashkothari2007/Mathora",
@@ -71,9 +79,9 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "nba-predictor",
-    name: "Yuno Ball - NBA Picks and Odds Predictor to make Educated Bets",
+    name: "Yuno Ball — NBA Picks & Odds Predictor",
     description:
-      "Scraped 9000 games of NBA data and trained multiple models such as XGBoost and Random Forest to predict game outcomes and scores, and compare with polymarket odds, all combined in a React environment with graded bets, parlay builder and a chatbot to understand reasons behind bets",
+      "Scraped 9,000 games of NBA data and trained multiple models (XGBoost, Random Forest) to predict game outcomes and scores, comparing against Polymarket odds. Full React frontend with graded bets, a parlay builder, and a chatbot to explain reasoning behind each pick.",
     image: "/nba.png",
     demoUrl: "https://youtu.be/U0FEb5V6Gc4",
     githubUrl: "https://github.com/akashkothari2007/NBA-Picks-and-Odds-Predictor",
@@ -83,7 +91,7 @@ export const PROJECTS: Project[] = [
     id: "lockin-ai",
     name: "LockIn AI — Distraction & Habit Detection App",
     description:
-      "Prototype productivity app that uses YOLO + OpenCV to detect on‑screen distractions and provide real‑time feedback, with a Python backend and Next.js UI for session tracking and analytics.",
+      "Prototype productivity app that uses YOLO + OpenCV to detect on-screen distractions and provide real-time feedback, with a Python backend and Next.js UI for session tracking and analytics.",
     image: "/lockin.png",
     demoUrl: "https://youtu.be/M90tyuMJuCk",
     githubUrl: "https://github.com/Daynel-Kem/LockInAI",
@@ -93,7 +101,7 @@ export const PROJECTS: Project[] = [
     id: "myroom",
     name: "Interactive 3D Personal Portfolio",
     description:
-      "Used Unity to create an interactive 3D personal portfolio exported as webGL and embedded in React.js with panel overlays and animations and 2D fallbacks in case of load fails",
+      "Interactive 3D portfolio built in Unity, exported as WebGL and embedded in React with panel overlays, animations, and a full 2D fallback for mobile and slow connections.",
     image: "/room.png",
     githubUrl: "https://github.com/akashkothari2007/InteractivePortfolio",
     techStack: "Unity · WebGL · C# · React · TypeScript · WASM · Panel Animation Architecture · Progressive Fallback Design",
@@ -102,7 +110,7 @@ export const PROJECTS: Project[] = [
     id: "finger-pointer",
     name: "Finger Pointer — Gyroscope‑Based Mouse",
     description:
-      "Wearable finger‑mounted pointing device built with an ESP32, MPU6050 IMU, and custom firmware to control the mouse cursor and clicks via gestures, designed for alternative input accessibility.",
+      "Wearable finger-mounted pointing device built with an ESP32, MPU6050 IMU, and custom firmware to control the mouse cursor and clicks via gestures, designed for alternative input accessibility.",
     image: "/fingerpointer.png",
     githubUrl: "https://github.com/akashkothari2007/FingerPointer",
     techStack: "ESP32 · MPU6050 IMU · C/C++ · Embedded Firmware · Sensor Fusion · Serial Communication",
@@ -111,11 +119,19 @@ export const PROJECTS: Project[] = [
     id: "gyro-robot",
     name: "Gyroscope Balancing Robot",
     description:
-      "Self‑balancing robot using Arduino and robotics control to keep upright based on gyroscope feedback, with logged experiments and tuning for stability.",
+      "Self-balancing robot using Arduino and PID control to stay upright from gyroscope feedback, with logged experiments and iterative tuning for stability.",
     image: "/finalrobot.png",
     demoUrl: "https://www.youtube.com/shorts/jFM6bGMcFYE",
     githubUrl: "https://github.com/akashkothari2007/GyroscopeRobot",
     techStack: "Arduino · MPU6050 · PID Control · Motor Drivers · Embedded C++ · Sensor Feedback Loops",
+  },
+  {
+    id: "buck-converter",
+    name: "Buck Converter — 24V to 3.3V (KiCad)",
+    description:
+      "Full buck converter design in KiCad 9 using the AP63300 regulator, from schematic capture through PCB layout and 3D board render — a hands-on power electronics project bridging hardware and software engineering.",
+    image: "/buckconverter.png",
+    techStack: "KiCad 9 · PCB Design · Schematic Capture · Power Electronics · AP63300 · Hardware Engineering",
   },
 ];
 
