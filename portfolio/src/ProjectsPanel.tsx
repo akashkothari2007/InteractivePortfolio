@@ -65,6 +65,7 @@ export const PROJECTS: Project[] = [
     description:
       "A Unity simulation with vehicle physics built from scratch — raycast suspension, tire grip curves, and braking — paired with a hand-written reinforcement learning loop (no ML-Agents). The agent learns to drive using 16 raycast sensors and a custom reward function, reaching 92% lap-completion rate within 500 training episodes.",
     image: "/RLCar.png",
+    demoUrl: "https://www.youtube.com/watch?v=eN3wt_Q75TQ",
     techStack: "Unity · C# · Reinforcement Learning · Custom Physics · Raycasting · Reward Shaping · Vehicle Dynamics",
   },
   {
