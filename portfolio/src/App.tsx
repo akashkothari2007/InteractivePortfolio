@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import UnityEmbed from "./UnityEmbed";
 import ProjectsPanel from "./ProjectsPanel";
 import ExperiencePanel from "./ExperiencePanel";
@@ -96,12 +97,14 @@ export default function App() {
     return (
       <div className="app">
         <Fallback2D isMobile />
+        <Analytics />
       </div>
     );
   }
 
   return (
     <div className="app">
+      <Analytics />
       <section className="hero">
         {/* Unity Embed */}
         <UnityEmbed />
@@ -147,4 +150,3 @@ export default function App() {
     </div>
   );
 }
-
