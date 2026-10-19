@@ -57,7 +57,7 @@ export const EXPERIENCES: Experience[] = [
     period: "Sep 2026 – Present",
     current: true,
     summary:
-      "Closed 4 authorization gaps in the Returns GraphQL API that let apps access other apps' return data, shipping each fix behind feature flags with production traffic validated in observability tooling. Implemented ReBAC (relationship-based access control) support for Returns, restoring access for Amazon fulfillment apps that were incorrectly blocked. Eliminated sequential GraphQL query waterfalls on high-traffic merchant-facing Returns pages by moving default-selection logic to the backend, cutting initial load time by ~50% (~500 ms).",
+      "Closed 4 authorization gaps in the Returns GraphQL API that let apps access other apps' return data, shipping each fix behind feature flags with production traffic validated in observability tooling. Implemented ReBAC (relationship-based access control) support for Returns, restoring access for Amazon fulfillment apps that were incorrectly blocked from their returns. Eliminated sequential GraphQL query waterfalls on high-traffic merchant-facing Returns pages by moving default-selection logic to the backend, cutting initial load time by ~50% (~500 ms).",
     tech: "Ruby on Rails • GraphQL • ReBAC • Feature Flags • Observability",
   },
   {
@@ -66,7 +66,7 @@ export const EXPERIENCES: Experience[] = [
     title: "Software Engineer Intern",
     period: "May 2026 – Sep 2026",
     summary:
-      "Developed a recommendation engine with a nightly sweeper that rolls purchase totals into a baseline popularity store, combined with weighted per-user signals and Redis caching for guest sessions. Added user event logging across 6 interaction types (views, add-to-carts, purchases) in a NestJS/TypeScript and PostgreSQL backend, capturing 500+ events/day as training data. Built a bulk CSV product-upload system processing up to 1,000 products per upload with server-side validation, flexible column aliasing, category matching, and a two-step validate-then-import flow.",
+      "Developed a recommendation engine with a nightly sweeper that rolls purchase totals into a baseline popularity store, combined with weighted per-user signals and Redis caching for guest sessions. Added user event logging across 6 interaction types (views, add-to-carts, purchases) in a NestJS/TypeScript and PostgreSQL backend, capturing 500+ events/day as training data to learn the engine's signal weights. Built a bulk CSV product-upload system processing up to 1,000 products per upload with server-side validation, flexible column aliasing, category matching, and a two-step validate-then-import flow.",
     tech: "NestJS • TypeScript • PostgreSQL • Redis • REST APIs",
   },
   {
@@ -75,7 +75,7 @@ export const EXPERIENCES: Experience[] = [
     title: "ML Software Engineering Intern",
     period: "Jan 2026 – Apr 2026",
     summary:
-      "Built a real-time clinical transcription pipeline fusing MedASR (dictation) and WhisperFlow (voice commands) via timestamp alignment and fuzzy matching, replacing an outsourced service with private in-house inference. Matched the outsourced vendor's accuracy benchmark, cutting word error rate by 80% across 200 audio samples via chunked streaming and PyTorch confidence scoring; deployed on Kubernetes and piloted with radiologists. Developed a deterministic replay eval harness with regression checks and a multi-pass LLM-as-judge for transcript error detection. Executed a Cosmos DB → SQL Server migration for scheduling data using dual-writes and backfill. Built an internal MCP server for Azure SQL with MFA token auth, enabling natural-language database queries.",
+      "Built a real-time clinical transcription pipeline fusing MedASR (dictation) and WhisperFlow (voice commands) via timestamp alignment and fuzzy matching, replacing an outsourced service with private in-house inference. Matched the outsourced vendor's accuracy benchmark, cutting word error rate by 80% across 200 audio samples via chunked streaming and PyTorch confidence scoring; deployed on Kubernetes and piloted with radiologists. Developed a deterministic replay eval harness scoring normalized WER against reference transcripts, with regression checks to prevent overfitting, plus a multi-pass LLM-as-judge that flags and fixes transcript errors. Executed a Cosmos DB → SQL Server migration for scheduling data using dual-writes and backfill. Built an internal MCP server for Azure SQL with MFA token auth, enabling natural-language database queries.",
     tech: "C# • Python • PyTorch • Azure • Docker • Kubernetes • SQL Server • MCP",
   },
   {

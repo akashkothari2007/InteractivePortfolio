@@ -57,7 +57,8 @@ export const PROJECTS: Project[] = [
     description:
       "Wrote a vehicle physics engine from scratch in Unity (no built-in wheel colliders): raycast spring-damper suspension, slip-based tire grip via tunable friction curves, and a configurable FWD/RWD/AWD drivetrain. Structured the sim as a reinforcement learning environment with raycast sensors and waypoint-based rewards, and implemented a custom PPO training loop from scratch (no ML-Agents) over a Python–Unity socket bridge.",
     image: "/RLCar.png",
-    demoUrl: "https://www.youtube.com/watch?v=eN3wt_Q75TQ",
+    demoUrl: "https://www.youtube.com/watch?v=htLdnbL9JFg",
+    githubUrl: "https://github.com/akashkothari2007/rl-car-unity",
     techStack: "Unity · C# · PyTorch · Reinforcement Learning · PPO · Custom Physics · Vehicle Dynamics",
   },
   {
