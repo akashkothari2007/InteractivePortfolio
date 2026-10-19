@@ -47,6 +47,7 @@ export const PROJECTS: Project[] = [
     description:
       "Built and solely maintain a multi-tenant expense platform used daily across 21 companies, processing $674K+ in expenses and auto-matching 87.8% of receipts to transactions — replacing a manual bookkeeping role. Engineered an email ingestion pipeline processing 600+ emails and 1,400+ receipts with GPT-4o Vision field extraction, using DB-tracked workers so no attachment is dropped on failure. Designed a rules engine mapping 573 vendors to 39 GL codes across 6 currencies, plus lazy PDF assembly with upload compression for reports exceeding 700 pages.",
     image: "/mercury.png",
+    demoUrl: "https://www.youtube.com/watch?v=9ys0e0qFLco",
     githubUrl: "https://github.com/akashkothari2007/KothariGroupReceiptSoftware",
     techStack: "React · FastAPI · Supabase · GPT-4o Vision · Redis · Rules Engine · PDF Pipeline",
   },
