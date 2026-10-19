@@ -42,31 +42,32 @@ interface ProjectsPanelProps {
 
 export const PROJECTS: Project[] = [
   {
-    id: "focusos",
-    name: "FocusOS — Personal Productivity OS",
-    description:
-      "Full-stack productivity OS with an Azure OpenAI job-analysis pipeline that scores resume-to-job match, extracts ATS keywords, and generates tailored LaTeX resumes. Designed a background task pipeline with non-blocking AI calls, retry logic, and real-time status polling — deployed with Docker and PostgreSQL. Tracks session and habit metrics across 15+ days of continuous daily use via a normalized multi-table schema and React dashboard.",
-    image: "/focusos.png",
-    githubUrl: "https://github.com/akashkothari2007/FocusOS",
-    techStack: "Python · FastAPI · PostgreSQL · Docker · React · TypeScript · Azure OpenAI · Microsoft Graph · OAuth 2.0 · Background Task Pipeline",
-  },
-  {
     id: "mercury-mortgages",
     name: "Mercury Mortgages — AI Expense Management System",
     description:
-      "Full-stack expense-matching system that matched 600+ receipts to 450+ transactions across 19 sub-companies, eliminating a manual bookkeeping role. Engineered a dual-ingestion pipeline parsing 250+ emails via Microsoft Graph webhooks, using GPT-4o Vision to extract receipt data and a Redis job queue with threaded workers for async PDF processing. Built a rules engine mapping vendor and location data to GL codes, with Microsoft SSO and role-based access control.",
+      "Built and solely maintain a multi-tenant expense platform used daily across 21 companies, processing $674K+ in expenses and auto-matching 87.8% of receipts to transactions — replacing a manual bookkeeping role. Engineered an email ingestion pipeline processing 600+ emails and 1,400+ receipts with GPT-4o Vision field extraction, using DB-tracked workers so no attachment is dropped on failure. Designed a rules engine mapping 573 vendors to 39 GL codes across 6 currencies, plus lazy PDF assembly with upload compression for reports exceeding 700 pages.",
     image: "/mercury.png",
     githubUrl: "https://github.com/akashkothari2007/KothariGroupReceiptSoftware",
-    techStack: "React · FastAPI · Supabase · GPT-4o Vision · Microsoft Graph · Redis · Webhooks · RBAC · Rules Engine",
+    techStack: "React · FastAPI · Supabase · GPT-4o Vision · Redis · Rules Engine · PDF Pipeline",
   },
   {
     id: "rl-car",
     name: "Self-Driving Car Simulator (RL)",
     description:
-      "A Unity simulation with vehicle physics built from scratch — raycast suspension, tire grip curves, and braking — paired with a hand-written reinforcement learning loop (no ML-Agents). The agent learns to drive using 16 raycast sensors and a custom reward function, reaching 92% lap-completion rate within 500 training episodes.",
+      "Wrote a vehicle physics engine from scratch in Unity (no built-in wheel colliders): raycast spring-damper suspension, slip-based tire grip via tunable friction curves, and a configurable FWD/RWD/AWD drivetrain. Structured the sim as a reinforcement learning environment with raycast sensors and waypoint-based rewards, and implemented a custom PPO training loop from scratch (no ML-Agents) over a Python–Unity socket bridge.",
     image: "/RLCar.png",
     demoUrl: "https://www.youtube.com/watch?v=eN3wt_Q75TQ",
-    techStack: "Unity · C# · Reinforcement Learning · Custom Physics · Raycasting · Reward Shaping · Vehicle Dynamics",
+    techStack: "Unity · C# · PyTorch · Reinforcement Learning · PPO · Custom Physics · Vehicle Dynamics",
+  },
+  {
+    id: "nba-predictor",
+    name: "Yuno Ball — NBA Picks & Odds Predictor",
+    description:
+      "Scraped 9,000+ games of NBA data and trained multiple models (XGBoost, Random Forest) to predict game outcomes and scores, benchmarking against Polymarket odds. Full React frontend with graded bets, a parlay builder, and a chatbot to explain reasoning behind each pick.",
+    image: "/nba.png",
+    demoUrl: "https://youtu.be/U0FEb5V6Gc4",
+    githubUrl: "https://github.com/akashkothari2007/NBA-Picks-and-Odds-Predictor",
+    techStack: "Python · XGBoost · Random Forest · Pandas · Feature Engineering · Flask API · React · Data Scraping · Model Evaluation",
   },
   {
     id: "mathora",
@@ -77,16 +78,6 @@ export const PROJECTS: Project[] = [
     demoUrl: "https://www.youtube.com/watch?v=CGYAKo7KKuw",
     githubUrl: "https://github.com/akashkothari2007/Mathora",
     techStack: "React · React Three Fiber · Three.js · TypeScript · LLM APIs · Custom Animation Timeline System · Node.js",
-  },
-  {
-    id: "nba-predictor",
-    name: "Yuno Ball — NBA Picks & Odds Predictor",
-    description:
-      "Scraped 9,000 games of NBA data and trained multiple models (XGBoost, Random Forest) to predict game outcomes and scores, comparing against Polymarket odds. Full React frontend with graded bets, a parlay builder, and a chatbot to explain reasoning behind each pick.",
-    image: "/nba.png",
-    demoUrl: "https://youtu.be/U0FEb5V6Gc4",
-    githubUrl: "https://github.com/akashkothari2007/NBA-Picks-and-Odds-Predictor",
-    techStack: "Python · XGBoost · Random Forest · Pandas · Feature Engineering · Flask API · React · Data Scraping · Model Evaluation",
   },
   {
     id: "lockin-ai",
@@ -106,6 +97,15 @@ export const PROJECTS: Project[] = [
     image: "/room.png",
     githubUrl: "https://github.com/akashkothari2007/InteractivePortfolio",
     techStack: "Unity · WebGL · C# · React · TypeScript · WASM · Panel Animation Architecture · Progressive Fallback Design",
+  },
+  {
+    id: "focusos",
+    name: "FocusOS — Personal Productivity OS",
+    description:
+      "Full-stack productivity OS with an Azure OpenAI job-analysis pipeline that scores resume-to-job match, extracts ATS keywords, and generates tailored LaTeX resumes. Designed a background task pipeline with non-blocking AI calls, retry logic, and real-time status polling — deployed with Docker and PostgreSQL. Tracks session and habit metrics across 15+ days of continuous daily use via a normalized multi-table schema and React dashboard.",
+    image: "/focusos.png",
+    githubUrl: "https://github.com/akashkothari2007/FocusOS",
+    techStack: "Python · FastAPI · PostgreSQL · Docker · React · TypeScript · Azure OpenAI · Background Task Pipeline",
   },
   {
     id: "finger-pointer",

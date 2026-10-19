@@ -53,20 +53,21 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "exp0",
     company: "Shopify",
-    title: "Software Engineering Intern",
-    period: "Sep 2026 – Dec 2026",
+    title: "Software Engineer Intern — Orders & Returns",
+    period: "Sep 2026 – Present",
+    current: true,
     summary:
-      "Incoming software engineering intern at Shopify.",
+      "Closed 4 authorization gaps in the Returns GraphQL API that let apps access other apps' return data, shipping each fix behind feature flags with production traffic validated in observability tooling. Implemented ReBAC (relationship-based access control) support for Returns, restoring access for Amazon fulfillment apps that were incorrectly blocked. Eliminated sequential GraphQL query waterfalls on high-traffic merchant-facing Returns pages by moving default-selection logic to the backend, cutting initial load time by ~50% (~500 ms).",
+    tech: "Ruby on Rails • GraphQL • ReBAC • Feature Flags • Observability",
   },
   {
     id: "exp1",
     company: "QuiikMart",
-    title: "Full-Stack Software Engineering Intern",
-    period: "May 2026 – Present",
-    current: true,
+    title: "Software Engineer Intern",
+    period: "May 2026 – Sep 2026",
     summary:
-      "Built a recommendation engine with a nightly sweeper that rolls purchase totals into a baseline popularity store, layered with per-user signals and Redis caching for guest sessions. Built a bulk CSV product-upload system processing up to 1,000 products per upload with server-side validation, flexible column aliasing, category matching, and a two-step validate-then-import flow. Wrote 80+ unit and integration tests, validated features in staging environments, and shipped bug fixes across a NestJS/TypeScript and PostgreSQL codebase.",
-    tech: "NestJS • TypeScript • PostgreSQL • Redis • REST APIs • Testing",
+      "Developed a recommendation engine with a nightly sweeper that rolls purchase totals into a baseline popularity store, combined with weighted per-user signals and Redis caching for guest sessions. Added user event logging across 6 interaction types (views, add-to-carts, purchases) in a NestJS/TypeScript and PostgreSQL backend, capturing 500+ events/day as training data. Built a bulk CSV product-upload system processing up to 1,000 products per upload with server-side validation, flexible column aliasing, category matching, and a two-step validate-then-import flow.",
+    tech: "NestJS • TypeScript • PostgreSQL • Redis • REST APIs",
   },
   {
     id: "exp2",
@@ -74,35 +75,17 @@ export const EXPERIENCES: Experience[] = [
     title: "ML Software Engineering Intern",
     period: "Jan 2026 – Apr 2026",
     summary:
-      "Built a real-time clinical transcription pipeline running MedASR (medical dictation) and WhisperFlow (voice commands) in parallel, fusing both streams via timestamp alignment and fuzzy word matching. Engineered chunked streaming, PyTorch word-confidence scoring, and a replay simulator for evaluation, cutting error rate by 80% across 200 clinical audio samples; deployed to Kubernetes via Azure Container Registry. Designed a Cosmos DB → SQL Server schema migration for a scheduling epic, with normalized appointment and reservation tables, wall-clock time storage, and full recurrence support. Built an internal MCP server for Azure SQL with MFA token auth, enabling natural-language database queries.",
-    tech: "C# • Python • PyTorch • Azure • Docker • Kubernetes • SQL Server • CosmosDB • MCP",
+      "Built a real-time clinical transcription pipeline fusing MedASR (dictation) and WhisperFlow (voice commands) via timestamp alignment and fuzzy matching, replacing an outsourced service with private in-house inference. Matched the outsourced vendor's accuracy benchmark, cutting word error rate by 80% across 200 audio samples via chunked streaming and PyTorch confidence scoring; deployed on Kubernetes and piloted with radiologists. Developed a deterministic replay eval harness with regression checks and a multi-pass LLM-as-judge for transcript error detection. Executed a Cosmos DB → SQL Server migration for scheduling data using dual-writes and backfill. Built an internal MCP server for Azure SQL with MFA token auth, enabling natural-language database queries.",
+    tech: "C# • Python • PyTorch • Azure • Docker • Kubernetes • SQL Server • MCP",
   },
   {
     id: "exp3",
-    company: "Midbike Electrium Mobility (University of Waterloo)",
-    title: "Embedded Firmware Developer",
-    period: "Sep 2025 – Dec 2025",
-    summary:
-      "Designed and programmed motor-control firmware for an e-bike mid-drive system on a student design team, integrating sensor input, safety interlocks, and real-time feedback loops on a VESC-based controller.",
-    tech: "Embedded C • Motor Control • VESC",
-  },
-  {
-    id: "exp4",
     company: "Tripleview Technologies",
     title: "Cloud Software Engineering Intern",
     period: "Jun 2025 – Sep 2025",
     summary:
-      "Automated Teams call-recording retrieval with Azure, Microsoft Graph, and C#, removing 10+ hours/week of manual work for customer support teams. Built an AI summarization pipeline with webhook triggers and polling logic that turned 8+ transcripts/hour into structured Zendesk tickets, shipped to production and adopted across internal teams.",
-    tech: "C# • Azure • Microsoft Graph • Webhooks • Zendesk • AI Summarization",
-  },
-  {
-    id: "exp5",
-    company: "Mathnasium – The Math Learning Center",
-    title: "Lead Instructor",
-    period: "Sep 2023 – Sep 2025",
-    summary:
-      "Led math instruction for 20+ students across grades 1–12, designing individualized learning plans and mentoring new instructors on teaching methodology and classroom management.",
-    tech: "Teaching • Communication • Mentorship",
+      "Automated Teams call-recording retrieval via Microsoft Graph and C# to feed an AI summarization pipeline, removing 10+ hours/week of manual work for customer support teams. Converted 8+ transcripts/hour into structured Zendesk tickets via webhooks; shipped to production and adopted across internal teams.",
+    tech: "C# • Azure • Microsoft Graph • Webhooks • Zendesk",
   },
 ];
 

@@ -4,11 +4,10 @@ import { EXPERIENCES, type Experience } from "./ExperiencePanel";
 import ProjectImage from "./ProjectImage";
 
 const SKILLS_DATA = [
-  { label: "Languages", tags: ["Python", "C/C++", "Java", "C#", "JavaScript (ES6+)", "TypeScript", "SQL"] },
-  { label: "Frameworks & Platforms", tags: ["Flask", "React", "Next.js", "Electron", "Node.js", "Azure", "Microsoft Graph API", "Unity", "WebGL"] },
-  { label: "Machine Learning", tags: ["PyTorch", "Scikit-learn", "XGBoost", "Pandas", "Computer Vision", "YOLO", "OpenCV"] },
-  { label: "Developer Tools", tags: ["Git", "VS Code", "Postman", "Kubernetes", "Jira", "Confluence"] },
-  { label: "Hardware & Electronics", tags: ["Arduino", "Raspberry Pi", "ESP32", "IMUs", "PID Control"] },
+  { label: "Languages", tags: ["Python", "C/C++", "C#", "TypeScript", "JavaScript", "Ruby", "Java", "SQL"] },
+  { label: "Frameworks & Libraries", tags: ["FastAPI", "NestJS", "Ruby on Rails", "Node.js/Express", "GraphQL", "React", "Next.js", "Unity"] },
+  { label: "Cloud & DevOps", tags: ["Azure", "Docker", "Kubernetes", "PostgreSQL", "Redis", "Supabase", "CI/CD", "Git", "REST APIs"] },
+  { label: "ML & Data", tags: ["PyTorch", "NumPy", "Pandas", "Reinforcement Learning", "MCP", "LLMs", "LLM Evaluation"] },
 ];
 
 export default function Fallback2D({ isMobile = false }: { isMobile?: boolean }) {
