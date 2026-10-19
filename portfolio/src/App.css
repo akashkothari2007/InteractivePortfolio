@@ -56,6 +56,110 @@
   }
 }
 
+/* ── Hero info card (bottom-left over the 3D room) ── */
+.hero-card {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 10;
+  max-width: 460px;
+  padding: 1rem 1.25rem 1.05rem;
+  font-family: "JetBrains Mono", "Fira Code", "IBM Plex Mono", "Consolas", monospace;
+  color: #a0e0a0;
+  background: rgba(27, 36, 29, 0.82);
+  border: 1px solid rgba(160, 224, 160, 0.28);
+  border-radius: 8px;
+  box-shadow:
+    0 0 0 1px rgba(160, 224, 160, 0.06),
+    0 12px 36px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(160, 224, 160, 0.08);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  animation: hero-card-in 0.6s ease-out 0.3s forwards;
+}
+
+.hero-card-prompt {
+  display: block;
+  font-size: 0.74rem;
+  letter-spacing: 0.05em;
+  color: rgba(160, 224, 160, 0.45);
+  margin-bottom: 0.35rem;
+}
+
+.hero-card-name {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 24px rgba(160, 224, 160, 0.25);
+}
+
+.hero-card-tagline {
+  margin: 0.3rem 0 0.6rem;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: rgba(160, 224, 160, 0.72);
+}
+
+.hero-card-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding: 0.22rem 0.7rem 0.22rem 0.55rem;
+  font-size: 0.74rem;
+  color: rgba(160, 224, 160, 0.85);
+  background: rgba(160, 224, 160, 0.07);
+  border: 1px solid rgba(160, 224, 160, 0.2);
+  border-radius: 999px;
+}
+
+.hero-card-links {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(160, 224, 160, 0.12);
+  font-size: 0.84rem;
+}
+
+.hero-card-link--accent {
+  color: #c8f5c8;
+  font-weight: 600;
+}
+
+.hero-card-link {
+  color: rgba(160, 224, 160, 0.85);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.hero-card-link::before {
+  content: "> ";
+  color: rgba(160, 224, 160, 0.35);
+}
+
+.hero-card-link:hover {
+  color: #c8f5c8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hero-card-sep {
+  color: rgba(160, 224, 160, 0.2);
+}
+
+@keyframes hero-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .header {
   position: absolute;
   top: 0;

@@ -115,6 +115,50 @@ export default function App() {
         <div className="hero-hint">
           Click around the room to explore projects, experience, and more.
         </div>
+
+        <aside className="hero-card" aria-label="About and contact">
+          <span className="hero-card-prompt">~/akash $ whoami</span>
+          <p className="hero-card-name">Akash Kothari</p>
+          <p className="hero-card-tagline">
+            CE @ Waterloo · SWE Intern @ Shopify · prev RamSoft, QuiikMart, Tripleview
+          </p>
+          <div className="hero-card-status">
+            <span className="about-status-dot" aria-hidden="true" />
+            Open to 2027 internships
+          </div>
+          <div className="hero-card-links">
+            <a
+              className="hero-card-link hero-card-link--accent"
+              href="/Akash_Kothari_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              resume
+            </a>
+            <span className="hero-card-sep">/</span>
+            <a className="hero-card-link" href="mailto:akashkothari07@gmail.com">
+              email
+            </a>
+            <span className="hero-card-sep">/</span>
+            <a
+              className="hero-card-link"
+              href="https://linkedin.com/in/akashkothari07"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              linkedin
+            </a>
+            <span className="hero-card-sep">/</span>
+            <a
+              className="hero-card-link"
+              href="https://github.com/akashkothari2007"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              github
+            </a>
+          </div>
+        </aside>
         <header className="header">
           <span className="header-name">Akash Kothari</span>
           <nav className="header-nav">
